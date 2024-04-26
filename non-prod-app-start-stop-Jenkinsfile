@@ -14,7 +14,7 @@ pipeline {
                 stage('Application: api-aem-kafka-producer') {
                     when {
                         expression {
-                        application.contains("Smartsheet")
+                        application.contains("api-aem-kafka-producer")
                         }
                     }
                     steps {
