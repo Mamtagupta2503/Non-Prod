@@ -25,11 +25,11 @@ pipeline {
 								def sit_Server = serverdetails.SIT_SERVERS
 								def dev_Server = serverdetails.DEV_SERVERS
 								
-								if(environment == 'SIT'){
+								if(environment.contains("SIT")){
 									def result = ActionOnSingleApi(sit_Server,'api-aem-kafka-producer',action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'DEV')){
+								else if(environment.contains("DEV")){
 									def result = ActionOnSingleApi(dev_Server,'api-aem-kafka-producer',action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}	
@@ -63,15 +63,15 @@ pipeline {
 								def qa_Server = serverdetails.QA_SERVERS
 								def api = serverdetails.SALI_API
 								
-								if(environment == 'SIT'){
+								if(environment.contains("SIT")){
 									def result = ActionOnMultpileApi(sit_Server,api,action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'DEV')){
+								else if(environment.contains("DEV")){
 									def result = ActionOnMultpileApi(dev_Server,api,action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'QA')){
+								else if(environment.contains("QA")){
 									def result = ActionOnMultpileApi(qa_Server,api,action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}								
@@ -106,15 +106,15 @@ pipeline {
 								def qa_Server = serverdetails.QA_SERVERS
 								def api = serverdetails.SMARTSHEET_API
 								
-								if(environment == 'SIT'){
+								if(environment.contains("SIT")){
 									def result = ActionOnMultpileApi(sit_Server,api,action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'DEV')){
+								else if(environment.contains("DEV")){
 									def result = ActionOnMultpileApi(dev_Server,api,action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'QA')){
+								else if(environment.contains("QA")){
 									def result = ActionOnMultpileApi(qa_Server,api,action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}								
@@ -146,12 +146,12 @@ pipeline {
 								def sit_Server = serverdetails.SIT_SERVERS
 								def dev_Server = serverdetails.DEV_SERVERS
 								
-								if(environment == 'SIT'){
+								if(environment.contains("SIT")){
 									def result = ActionOnSingleApi(sit_Server,'SplunkForwarder',action)
 									//def result = ActionOnSingleApi(sit_Server,'servicerouter',action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'DEV')){
+								else if(environment.contains("DEV")){
 									def result = ActionOnSingleApi(sit_Server,'SplunkForwarder',action)
 									//def result = ActionOnSingleApi(dev_Server,'servicerouter',action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
@@ -186,15 +186,15 @@ pipeline {
 								def dev_Server = serverdetails.DEV_SERVERS
 								def qa_Server = serverdetails.QA_SERVERS
 								
-								if(environment == 'SIT'){
+								if(environment.contains("SIT")){
 									def result = ActionOnSingleApi(sit_Server,'api-mobilehandofftoken',action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'DEV')){
+								else if(environment.contains("DEV")){
 									def result = ActionOnSingleApi(dev_Server,'api-mobilehandofftoken',action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}
-								else if((environment == 'QA')){
+								else if(environment.contains("QA")){
 									def result = ActionOnSingleApi(qa_Server,'api-mobilehandofftoken',action)
 									publishresults = publishresults + "application:" + application + "-" + environment + "-" + result+ "\n"
 								}								
