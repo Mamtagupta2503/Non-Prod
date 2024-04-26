@@ -232,7 +232,7 @@ def ActionOnMultpileApi(Object server, Object api, String action ){
 		def sshCommandLine="ssh ${sshOption} jenkins_worker@${s}"
 		for(a in api) 
 		{
-			println "${sshCommandLine} sudo service ${a} &{action}"
+			println "${sshCommandLine} sudo service ${a} ${action}"
 			try{
 				//sh "${sshCommandLine} sudo service ${a} ${action}"
 			}catch(Exception e) 
@@ -253,7 +253,7 @@ def ActionOnSingleApi(Object server, String api, String action ){
 	def sshOption="-i ${JENKINS_HOME}/.ssh/id_jenkins_worker_rsa -o StrictHostKeyChecking=no"
 	for(s in server) {
 		def sshCommandLine="ssh ${sshOption} jenkins_worker@${s}"
-		println "${sshCommandLine} sudo service ${api} {action}" 
+		println "${sshCommandLine} sudo service ${api} ${action}" 
 		try{
 			//sh "${sshCommandLine} sudo service ${api} ${action}"
 		}catch(Exception e) 
