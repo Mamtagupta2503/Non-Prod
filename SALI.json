@@ -1,0 +1,22 @@
+{  
+    "SIT_SERVERS": [
+		"api1-qa.ncw.webapps.rr.com"
+    ],
+  	"QA_SERVERS": [
+		"oob-api1-qa1.ncw.webapps.rr.com"
+    ],
+	"DEV_SERVERS": [
+		"api1-dev.ncw.webapps.rr.com"
+    ],
+	"SALI_API" : [
+		"SplunkForwarder",
+	    "api-serviceability-context",
+		"api-serviceability-content",
+		"api-serviceability-camunda-bpm",
+		"api-serviceability",
+		"api-serviceability-context-wrapper",
+		"api-serviceability-mobilie-eligibility",
+
+	]
+
+}

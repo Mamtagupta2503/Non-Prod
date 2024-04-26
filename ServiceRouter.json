@@ -1,0 +1,13 @@
+{  
+
+	"SIT_SERVERS": [
+		"oob-sr1-sit1.ncw.webapps.rr.com"
+	],
+	"QA_SERVERS": [
+		"oob-sr1-qa1.ncw.webapps.rr.com",
+		"oob-sr2-qa1.ncw.webapps.rr.com"
+	],
+	"DEV_SERVERS": [
+		"oob-all-dev1.ncw.webapps.rr.com"
+	]
+}

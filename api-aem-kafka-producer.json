@@ -1,0 +1,9 @@
+{  
+
+    "SIT_SERVERS": [
+		"api1-qa.ncw.webapps.rr.com"
+    ],
+	"DEV_SERVERS": [
+		"api1-dev.ncw.webapps.rr.com"
+    ]
+}
