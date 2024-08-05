@@ -1,0 +1,4 @@
+{  
+	"PREPROD_NCE_SERVERS": 	["mobile-auth1-preprod.nce.corp.chartercom.com","mobile-pub1-preprod.nce.corp.chartercom.com","mobile-pub2-preprod.nce.corp.chartercom.com"],
+	"PREPROD_NCW_SERVERS": 	["mobile-auth1-preprod.ncw.corp.chartercom.com","mobile-pub1-preprod.ncw.corp.chartercom.com","mobile-pub2-preprod.ncw.corp.chartercom.com"]
+}
