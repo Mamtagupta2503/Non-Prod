@@ -13,8 +13,9 @@ pipeline {
 			git branch: 'main', changelog: false, credentialsId: 'jenkins_bitbucket', poll: false, url: 'https://github.com/Mamtagupta2503/Non-Prod.git'
 			}*/
 			steps{
-			checkout([$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs: [[url: 'https://github.com/Mamtagupta2503/mamta.git']]])
-			}
+			//checkout([$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs: [[url: 'https://github.com/Mamtagupta2503/mamta.git']]])
+			checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/main']], extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: 'start-stop.sh']]]], userRemoteConfigs: [[url: 'https://github.com/Mamtagupta2503/mamta.git']])
+            }
 		}	
         stage('Parallel execution') {
             parallel {
