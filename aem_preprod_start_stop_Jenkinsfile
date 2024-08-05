@@ -9,8 +9,12 @@ pipeline {
 
     stages {
 		stage('git pull'){
-			steps {
+			/*steps {
 			git branch: 'main', changelog: false, credentialsId: 'jenkins_bitbucket', poll: false, url: 'https://github.com/Mamtagupta2503/Non-Prod.git'
+			}*/
+			steps{
+            cleanWs()
+			checkout([$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs: [[url: 'https://github.com/Mamtagupta2503/Non-Prod.git']]])
 			}
 		}	
         stage('Parallel execution') {
