@@ -19,7 +19,7 @@ pipeline {
 							 [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'scripts/']]]	
 							], 
                 submoduleCfg: [], 
-                userRemoteConfigs: [[url: 'https://github.com/Mamtagupta2503/mamta.git']]
+                userRemoteConfigs: [[url: 'https://github.com/Mamtagupta2503/Non-Prod.git']]
                 
         ])
             }
