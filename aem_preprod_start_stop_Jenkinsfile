@@ -11,12 +11,16 @@ pipeline {
         stage('git pull'){
 			steps{
             checkout([  
+				cleanWs()
                 $class: 'GitSCM', 
                 branches: [[name: 'main']], 
                 doGenerateSubmoduleConfigurations: false, 
-                extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'StartStopDirectory']], 
+                extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'StartStopDirectory', sparse],
+							 [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'scripts/']]]	
+							], 
                 submoduleCfg: [], 
                 userRemoteConfigs: [[url: 'https://github.com/Mamtagupta2503/mamta.git']]
+                
         ])
             }
 		}
